@@ -15,32 +15,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-          --bg: #e0e0e5; 
-          --main-text: #1c1c1e;
-          --desc-text: #636366;
-          --accent: #ff7a00; /* درجة البرتقالي المطابقة لهوية اللوجو الجديد */
-          --address-tag: #0a84ff;
-          --white: #f2f2f7; 
-          --glass: rgba(242, 242, 247, 0.95);
+          --bg: #f4f5f7; 
+          --main-text: #0b3168; /* الأزرق الكحلي العميق */
+          --desc-text: #536785;
+          --accent: #ff6a00; /* زيادة درجة البرتقالي الحيوية */
+          --address-tag: #ff6a00;
+          --white: #faf9f6; /* تحويل الأبيض إلى أوف وايت فخم */
+          --glass: rgba(250, 249, 246, 0.95);
           --success: #34c759;
-          --header-bg: #f2f2f7;
-          --blur-bg: rgba(255, 255, 255, 0.6);
+          --header-bg: #faf9f6;
+          --blur-bg: rgba(250, 249, 246, 0.6);
         }
 
         body.dark-mode {
-          --bg: #121212;
-          --main-text: #f2f2f7;
-          --desc-text: #aeaeb2;
-          --white: #1c1c1e;
-          --glass: rgba(28, 28, 30, 0.95);
-          --header-bg: #1c1c1e;
-          --blur-bg: rgba(0, 0, 0, 0.6);
+          --bg: #0b3168; 
+          --main-text: #faf9f6;
+          --desc-text: #cbd5e1;
+          --white: #113d7a;
+          --glass: rgba(11, 49, 104, 0.95);
+          --header-bg: #113d7a;
+          --blur-bg: rgba(11, 49, 104, 0.6);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; transition: background 0.3s, color 0.3s; }
         body { background-color: var(--bg); color: var(--main-text); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- شاشة الترحيب بأنيميشن سينمائي جديد ومرن 🌀 --- */
+        /* --- شاشة الترحيب --- */
         #splash-screen {
           position: fixed; top: 0; left: 0; width: 100%; height: 100%;
           background: var(--white); z-index: 9999;
@@ -50,10 +50,9 @@
         .loader-content { text-align: center; position: relative; }
         .logo-wrapper { position: relative; width: 155px; height: 155px; margin: 0 auto 25px auto; }
         
-        /* الأنيميشن الجديد: دوران ناعم مع تكبير تدريجي وظهور فخم */
         .loader-logo-big {
           width: 100%; height: 100%; border-radius: 50%;
-          object-fit: cover; box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+          object-fit: cover; box-shadow: 0 10px 40px rgba(11, 49, 104, 0.1);
           opacity: 0; filter: blur(10px); transform: scale(0.6) rotate(-45deg);
           animation: luxuryDynamicLogo 1.6s cubic-bezier(0.25, 1.1, 0.5, 1) forwards 0.1s;
         }
@@ -65,11 +64,11 @@
         }
         .loader-text, .loader-slogan, .loading-bar { opacity: 0; transform: translateY(20px); }
         .loader-text { 
-          font-weight: 800; color: var(--accent); font-size: 2rem; margin-bottom: 4px; 
+          font-weight: 800; color: var(--main-text); font-size: 2.1rem; margin-bottom: 4px; 
           letter-spacing: -0.5px; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.8s;
         }
-        .loader-slogan { font-size: 1.05rem; color: var(--desc-text); font-weight: 700; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s; }
-        .loading-bar { width: 140px; height: 3.5px; background: rgba(0,0,0,0.05); margin: 25px auto 0 auto; border-radius: 10px; overflow: hidden; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s; }
+        .loader-slogan { font-size: 1.15rem; color: var(--accent); font-weight: 700; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s; }
+        .loading-bar { width: 140px; height: 3.5px; background: rgba(11, 49, 104, 0.08); margin: 25px auto 0 auto; border-radius: 10px; overflow: hidden; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s; }
         .loading-bar span { display: block; width: 0; height: 100%; background: var(--accent); animation: progress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
         
         @keyframes luxuryDynamicLogo { 
@@ -77,7 +76,7 @@
             opacity: 1; 
             filter: blur(0); 
             transform: scale(1) rotate(0deg); 
-            box-shadow: 0 25px 50px rgba(255, 122, 0, 0.15); 
+            box-shadow: 0 25px 50px rgba(255, 106, 0, 0.2); 
           } 
         }
         @keyframes chefSign { 0% { opacity: 0; transform: scale(0) rotate(30deg); } 40% { opacity: 1; transform: scale(1.2) rotate(-10deg); } 60% { transform: scale(0.95) rotate(5deg); } 80% { transform: scale(1.1) rotate(0deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
@@ -92,7 +91,7 @@
           top: 0;
           z-index: 1000;
           background: var(--header-bg);
-          box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+          box-shadow: 0 4px 25px rgba(11, 49, 104, 0.08);
           padding-top: calc(12px + env(safe-area-inset-top, 0px));
         }
 
@@ -104,14 +103,14 @@
         }
         .header-top { width: 100%; display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 6px; }
         
-        .header-logo-container { width: 95px; height: 95px; border-radius: 50%; background: white; padding: 3px; box-shadow: 0 3px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        .header-logo-container { width: 95px; height: 95px; border-radius: 50%; background: var(--white); padding: 3px; box-shadow: 0 3px 12px rgba(11, 49, 104, 0.15); overflow: hidden; }
         .header-logo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
         
         .theme-toggle { position: absolute; right: 16px; top: 12px; width: 40px; height: 40px; background: var(--bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; border: none; color: var(--main-text); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
         .cart-trigger-container { position: absolute; left: 16px; top: 12px; }
         .cart-trigger { width: 40px; height: 40px; background: var(--bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
         .cart-trigger.shake { animation: cartShake 0.5s ease-in-out; }
-        @keyframes cartShake { 0%, 100% { transform: scale(1) rotate(0deg); } 20%, 60% { transform: scale(1.15) rotate(-10deg); } 40%, 80% { transform: scale(1.15) rotate(10deg); } }
+        @keyframes cartShake { 0%, 100% { transform: scale(1) rotate(0deg); } 20%, 60% { transform: scale(1.25) rotate(-12deg); } 40%, 80% { transform: scale(1.25) rotate(12deg); } }
         .badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 10px; font-weight: 800; width: 19px; height: 19px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; transform: scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .badge.show { transform: scale(1); }
         
@@ -119,7 +118,7 @@
           text-align: center; 
           width: 100%; 
           padding: 6px 16px; 
-          border-top: 0.5px solid rgba(0,0,0,0.04); 
+          border-top: 0.5px solid rgba(11, 49, 104, 0.06); 
           display: flex; 
           flex-direction: row; 
           align-items: center; 
@@ -127,9 +126,10 @@
           gap: 4px; 
           flex-wrap: wrap;
         }
-        .addr-tag { color: var(--address-tag); font-weight: 800; font-size: 0.85rem; white-space: nowrap; }
+        .addr-tag { color: var(--accent); font-weight: 800; font-size: 0.85rem; white-space: nowrap; }
         .brand-addr { font-size: 0.85rem; color: var(--main-text); font-weight: 700; line-height: 1.3; text-align: center; }
 
+        /* الأقسام - الصور محتفظ بها كما هي ومحمية */
         .category-nav { 
           display: flex; 
           overflow-x: auto; 
@@ -139,7 +139,7 @@
           scrollbar-width: none; 
           background: var(--glass); 
           backdrop-filter: blur(20px); 
-          border-bottom: 0.5px solid rgba(0,0,0,0.1); 
+          border-bottom: 0.5px solid rgba(11, 49, 104, 0.1); 
           -webkit-overflow-scrolling: touch; 
         }
         .category-nav::-webkit-scrollbar { display: none; }
@@ -152,69 +152,64 @@
         .cat-item.active span { color: var(--main-text); font-weight: 800; }
 
         .menu-list { padding: 12px; max-width: 600px; margin: 10px auto auto auto; }
-        .food-card { background: var(--white); border-radius: 22px; margin-bottom: 12px; display: flex; padding: 12px; gap: 12px; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-        .item-img-box { width: 85px; height: 85px; border-radius: 18px; overflow: hidden; background: #e5e5ea; flex-shrink: 0; }
-        .item-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .food-info { flex: 1; position: relative; display: flex; flex-direction: column; justify-content: center; height: 85px; }
-        .food-name { font-weight: 700; font-size: 1rem; color: var(--main-text); margin-bottom: 8px; }
+        /* كروت الأصناف - تم التعديل لتكون بدون أيقونات صور الأصناف بناءً على رغبتك */
+        .food-card { background: var(--white); border-radius: 18px; margin-bottom: 10px; display: flex; padding: 16px; gap: 12px; align-items: center; box-shadow: 0 4px 15px rgba(11, 49, 104, 0.03); }
+        .food-info { flex: 1; position: relative; display: flex; flex-direction: column; justify-content: center; }
+        .food-name { font-weight: 700; font-size: 1.05rem; color: var(--main-text); margin-bottom: 6px; }
         .price-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .food-price { font-weight: 800; color: var(--accent); font-size: 0.95rem; }
-        .add-btn { background: var(--accent); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .food-price { font-weight: 800; color: var(--accent); font-size: 1rem; }
+        .add-btn { background: var(--accent); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2); }
         
-        .added-notice { position: absolute; left: 45px; background: rgba(255, 122, 0, 0.12); color: var(--accent); font-size: 0.72rem; font-weight: 800; padding: 5px 12px; border-radius: 12px; opacity: 0; transform: translateY(8px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; }
-        .added-notice.show { opacity: 1; transform: translateY(0); }
+        /* تأثير تم الطلب البسيط والواضح بالبرتقالي المكثف */
+        .added-notice { 
+          position: absolute; 
+          left: 48px; 
+          background: var(--accent); 
+          color: #ffffff; 
+          font-size: 0.75rem; 
+          font-weight: 800; 
+          padding: 6px 14px; 
+          border-radius: 20px; 
+          opacity: 0; 
+          transform: translateY(8px); 
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+          pointer-events: none;
+          box-shadow: 0 4px 12px rgba(255, 106, 0, 0.35);
+        }
+        .added-notice.show { 
+          opacity: 1; 
+          transform: translateY(0);
+          animation: pulseNotice 0.4s ease-in-out alternate 2;
+        }
+        @keyframes pulseNotice {
+          0% { transform: scale(1); }
+          100% { transform: scale(1.08); }
+        }
 
-        /* نافذة التأكيد */
-        .confirm-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); z-index: 10000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
-        .confirm-box { background: var(--white); width: 100%; max-width: 360px; border-radius: 26px; padding: 25px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.15); transform: scale(0.85); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .confirm-overlay.open { display: flex; opacity: 1; }
-        .confirm-overlay.open .confirm-box { transform: scale(1); }
-        .confirm-icon { font-size: 2.5rem; margin-bottom: 12px; display: inline-block; }
-        .confirm-title { font-weight: 800; font-size: 1.2rem; color: var(--accent); margin-bottom: 10px; }
-        .confirm-msg { font-size: 0.9rem; color: var(--main-text); font-weight: 600; line-height: 1.5; margin-bottom: 22px; }
-        .confirm-buttons { display: flex; gap: 12px; }
-        .confirm-btn { flex: 1; padding: 13px; border: none; border-radius: 14px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: 0.2s; }
-        .btn-yes { background: var(--accent); color: white; }
-        .btn-yes:active { transform: scale(0.96); }
-        .btn-no { background: var(--bg); color: var(--desc-text); }
-
-        .fly-item { position: fixed; z-index: 9999; pointer-events: none; width: 30px; height: 30px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1); }
+        .fly-item { position: fixed; z-index: 9999; pointer-events: none; width: 30px; height: 30px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
 
         /* --- Footer --- */
-        .restaurant-footer { padding: 30px 20px; text-align: center; background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); margin-top: 20px; }
+        .restaurant-footer { padding: 30px 20px; text-align: center; background: var(--white); border-top: 1px solid rgba(11, 49, 104, 0.05); margin-top: 20px; }
         .footer-phones { margin-bottom: 15px; }
-        .footer-phones a { display: block; color: var(--accent); text-decoration: none; font-weight: 800; font-size: 1.1rem; margin: 5px 0; }
+        .footer-phones a { display: block; color: var(--accent); text-decoration: none; font-weight: 800; font-size: 1.25rem; margin: 5px 0; letter-spacing: 0.5px; }
         .footer-rights { font-size: 0.8rem; color: var(--main-text); font-weight: 600; margin-bottom: 5px; }
         .dev-credit { font-size: 0.85rem; color: var(--desc-text); font-weight: 700; }
-        .dev-credit a { color: var(--address-tag); text-decoration: none; display: block; margin-top: 3px; }
+        .dev-credit a { color: var(--accent); text-decoration: none; display: block; margin-top: 3px; }
 
         /* مودال السلة */
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; justify-content: center; align-items: flex-end; }
-        .modal-content { background: var(--white); width: 100%; max-width: 500px; padding: 25px; border-radius: 30px 30px 0 0; max-height: 90vh; overflow-y: auto; color: var(--main-text); }
-        .cart-item-card { display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(0,0,0,0.04); border-radius: 18px; margin-bottom: 10px; }
-        .cart-item-img { width: 50px; height: 50px; border-radius: 12px; object-fit: cover; }
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 49, 104, 0.4); backdrop-filter: blur(5px); z-index: 2000; display: none; justify-content: center; align-items: flex-end; }
+        .modal-content { background: var(--white); width: 100%; max-width: 500px; padding: 25px; border-radius: 30px 30px 0 0; max-height: 90vh; overflow-y: auto; color: var(--main-text); box-shadow: 0 -10px 30px rgba(11, 49, 104, 0.15); }
+        .cart-item-card { display: flex; align-items: center; justify-content: space-between; padding: 14px; background: rgba(11, 49, 104, 0.04); border-radius: 14px; margin-bottom: 10px; }
         .cart-item-info { flex: 1; }
-        .cart-item-name { font-weight: 700; font-size: 0.9rem; color: var(--main-text); }
-        .cart-item-price { color: var(--accent); font-weight: 800; font-size: 0.85rem; display: block; }
-        .remove-btn { color: #ff3b30; font-weight: 800; font-size: 0.75rem; cursor: pointer; }
-        .user-fields input { background: var(--bg); border: none; padding: 16px; border-radius: 14px; width: 100%; margin-bottom: 10px; color: var(--main-text); text-align: right; }
-        .submit-btn { background: #34c759; color: white; border: none; padding: 18px; border-radius: 18px; width: 100%; font-weight: 800; cursor: pointer; }
-        .shipping-note { font-size: 0.75rem; color: var(--desc-text); font-weight: 600; display: block; margin-top: 2px; }
+        .cart-item-name { font-weight: 700; font-size: 0.95rem; color: var(--main-text); }
+        .cart-item-price { color: var(--accent); font-weight: 800; font-size: 0.9rem; display: block; margin-top: 2px; }
+        .remove-btn { color: #ff3b30; font-weight: 800; font-size: 0.8rem; cursor: pointer; padding: 4px 8px; }
+        .user-fields input { background: var(--bg); border: none; padding: 16px; border-radius: 14px; width: 100%; margin-bottom: 10px; color: var(--main-text); text-align: right; font-weight: 600; }
+        .user-fields input::placeholder { color: var(--desc-text); opacity: 0.7; }
+        .submit-btn { background: #34c759; color: white; border: none; padding: 18px; border-radius: 18px; width: 100%; font-weight: 800; cursor: pointer; font-size: 1rem; box-shadow: 0 4px 12px rgba(52, 199, 89, 0.25); }
     </style>
 </head>
 <body>
-
-    <div id="customConfirm" class="confirm-overlay">
-        <div class="confirm-box">
-            <span class="confirm-icon">🥐</span>
-            <h3 class="confirm-title">تنبيه تجهيز الطلب</h3>
-            <p class="confirm-msg">هذا الصنف يتم تحضيره طازجاً وخاصاً لك في مطبخنا، لذا يستغرق تجهيزه 24 ساعة ليكون بأعلى جودة. هل أنت موافق؟</p>
-            <div class="confirm-buttons">
-                <button class="confirm-btn btn-yes" id="confirmYesBtn">نعم، موافق</button>
-                <button class="confirm-btn btn-no" id="confirmNoBtn">إلغاء</button>
-            </div>
-        </div>
-    </div>
 
     <div id="splash-screen">
         <div class="loader-content">
@@ -223,7 +218,7 @@
                 <span class="chef-hand-sign">👌</span>
             </div>
             <h2 class="loader-text">قرمشة وتوريقة</h2>
-            <p class="loader-slogan">الأكل على أصوله 🥐✨</p>
+            <p class="loader-slogan">لَمَّا الطَّعْم يِبْقَى حِكَايَة...</p>
             <div class="loading-bar"><span></span></div>
         </div>
     </div>
@@ -244,7 +239,7 @@
             </div>
             <div class="header-bottom-addr">
                 <span class="addr-tag">📍 العنوان:</span>
-                <span class="brand-addr">٣٨ السياحية الرابعة، وصلة دهشور، ٦ أكتوبر، بجوار نادي النادي</span>
+                <span class="brand-addr">شارع زاهر جلال / أسفل مطعم واحة العرب</span>
             </div>
         </header>
         <div class="category-nav" id="catNav"></div>
@@ -254,8 +249,8 @@
 
     <footer class="restaurant-footer">
         <div class="footer-phones">
-            <span style="font-weight: 800; font-size: 0.95rem;">📞 رقم استقبال الطلبات:</span>
-            <a href="tel:01032654884">01032654884</a>
+            <span style="font-weight: 800; font-size: 0.95rem;">📞 رقم استقبال الطلبات والدليفري الرسمي:</span>
+            <a href="tel:01080600408">01080600408</a>
         </div>
         <p class="footer-rights">جميع الحقوق محفوظة لـ قرمشة وتوريقة 2026 ©</p>
         <div class="dev-credit">
@@ -268,19 +263,16 @@
         <div class="modal-content">
             <h2 style="margin-bottom: 20px;">طلباتك</h2>
             <div id="cartItemsList"></div>
-            <div style="margin: 20px 0; padding: 15px; background: rgba(255, 122, 0, 0.1); border-radius: 18px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="margin: 20px 0; padding: 15px; background: rgba(255, 106, 0, 0.1); border-radius: 18px; display: flex; justify-content: space-between; align-items: center;">
                 <b>المجموع النهائي</b>
-                <div style="text-align: left;">
-                    <b id="totalAmount" style="color: var(--accent); font-size: 1.1rem;">0 ج.م</b>
-                    <span class="shipping-note">+ رسوم التوصيل (تُحدد لاحقاً)</span>
-                </div>
+                <b id="totalAmount" style="color: var(--accent); font-size: 1.15rem;">0 ج.م</b>
             </div>
             <div class="user-fields">
                 <input type="text" id="uName" placeholder="الاسم بالكامل">
                 <input type="tel" id="uPhone" placeholder="رقم الموبايل">
                 <input type="text" id="uAddr" placeholder="العنوان بالتفصيل">
             </div>
-            <button class="submit-btn" onclick="sendToWA()">تأكيد الطلب</button>
+            <button class="submit-btn" onclick="sendToWA()">تأكيد الطلب عبر WhatsApp</button>
         </div>
     </div>
 
@@ -288,8 +280,7 @@
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLNqSU18aiPgmle9buLnKuMA5JzoqVx6Ghs6Vkxhln3OZI_zLP4Qx7q4ZUbS2OC7b9Wvk02qXyuWx4/pub?output=csv';
         const IMAGES_PATH = "./images/"; 
         let menuData = [], cart = [];
-        let currentTotal = 0; 
-        let pendingItem = null;
+        let currentTotal = 0;
 
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
@@ -297,7 +288,6 @@
         }
 
         function preloadImages(data) {
-            data.forEach(item => { const img = new Image(); img.src = item.img; });
             const cats = [...new Set(data.map(i => i.category))];
             cats.forEach(c => { const img = new Image(); img.src = `${IMAGES_PATH}${c}.jpg`; });
         }
@@ -328,7 +318,7 @@
                     let itemPrice = col[2]?.replace(/^["']|["']$/g, '').trim();
                     
                     if(itemName) {
-                        menuData.push({ category: categoryName, name: itemName, price: itemPrice, img: `${IMAGES_PATH}${itemName}.jpg` });
+                        menuData.push({ category: categoryName, name: itemName, price: itemPrice });
                     }
                 }
                 preloadImages(menuData); renderNav();
@@ -356,40 +346,27 @@
                 el.classList.add('active');
                 el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
+            // المنيو بدون صندوق أيقونة صورة الصنف تلبيةً لطلبك
             document.getElementById('menuList').innerHTML = menuData.filter(i => i.category === cat).map(item => `
                 <div class="food-card">
-                    <div class="item-img-box"><img src="${item.img}" onerror="this.src='${IMAGES_PATH}default.jpg'"></div>
                     <div class="food-info">
                         <span class="food-name">${item.name}</span>
                         <div class="price-row">
                             <span class="food-price">${item.price} ج.م</span>
-                            <span class="added-notice">أُضيف للسلة 🧑‍🍳</span>
-                            <button class="add-btn" onclick="triggerAddFlow(event, this, '${item.name}', ${item.price}, '${item.img}')">+</button>
+                            <span class="added-notice">تم الطلب ✔️</span>
+                            <button class="add-btn" onclick="addToCart(event, this, '${item.name}', ${item.price})">+</button>
                         </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        function triggerAddFlow(e, btn, name, price, img) {
-            pendingItem = { clickEvent: { clientX: e.clientX, clientY: e.clientY }, button: btn, name, price, img };
-            document.getElementById('customConfirm').classList.add('open');
-        }
-
-        document.getElementById('confirmYesBtn').addEventListener('click', () => {
-            if (pendingItem) { executeAddToCart(pendingItem.clickEvent, pendingItem.button, pendingItem.name, pendingItem.price, pendingItem.img); }
-            closeConfirmModal();
-        });
-
-        document.getElementById('confirmNoBtn').addEventListener('click', () => { closeConfirmModal(); });
-
-        function closeConfirmModal() { document.getElementById('customConfirm').classList.remove('open'); pendingItem = null; }
-
-        function executeAddToCart(e, btn, name, price, img) {
-            cart.push({name, price, img});
+        function addToCart(e, btn, name, price) {
+            cart.push({name, price});
+            
             const notice = btn.previousElementSibling;
             notice.classList.add('show');
-            setTimeout(() => notice.classList.remove('show'), 2000);
+            setTimeout(() => notice.classList.remove('show'), 1800);
 
             const fly = document.createElement('div');
             fly.className = 'fly-item'; fly.innerHTML = '🥐';
@@ -398,6 +375,7 @@
 
             const cartBtn = document.getElementById('cartBtn');
             const cartPos = cartBtn.getBoundingClientRect();
+            
             setTimeout(() => {
                 fly.style.left = (cartPos.left + 20) + 'px';
                 fly.style.top = (cartPos.top + 20) + 'px';
@@ -405,10 +383,11 @@
             }, 10);
             
             setTimeout(() => { 
-                fly.remove(); updateCart();
+                fly.remove(); 
+                updateCart();
                 cartBtn.classList.add('shake');
                 setTimeout(() => cartBtn.classList.remove('shake'), 500);
-            }, 700);
+            }, 600);
         }
 
         function updateCart() {
@@ -419,7 +398,6 @@
               currentTotal += parseFloat(item.price);
               return `
               <div class="cart-item-card">
-                  <img src="${item.img}" class="cart-item-img" onerror="this.src='${IMAGES_PATH}default.jpg'">
                   <div class="cart-item-info">
                       <span class="cart-item-name">${item.name}</span>
                       <span class="cart-item-price">${item.price} ج.م</span>
@@ -443,16 +421,17 @@
             if (modal.style.display === 'flex') { modal.style.display = 'none'; }
         });
 
-        // رسالة الواتساب المحدثة باسم قرمشة وتوريقة
         function sendToWA() {
             const n = document.getElementById('uName').value, p = document.getElementById('uPhone').value, a = document.getElementById('uAddr').value;
             if(!n || !p || !a || cart.length === 0) return alert("يرجى إكمال البيانات واختيار الأصناف");
             
+            // تم مسح جملة التوصيل بالكامل من محتوى الرسالة النهائية الموجهة للواتساب
             let msg = `طلب جديد - قرمشة وتوريقة\n\n👤 الاسم: ${n}\n📱 الموبايل: ${p}\n📍 العنوان: ${a}\n\nالطلبات:\n` 
                       + cart.map(i => `- ${i.name} (${i.price} ج.م)`).join('\n')
-                      + `\n\n💰 الإجمالي: ${currentTotal} ج.م + رسوم التوصيل\n⚠️ تأكيد: وافق العميل رسمياً في الموقع على أن التجهيز يستغرق 24 ساعة.`;
-                      
-            window.open(`https://wa.me/201032654884?text=${encodeURIComponent(msg)}`);
+                      + `\n\n💰 الإجمالي: ${currentTotal} ج.م`;
+            
+            // التوجيه المباشر للرقم الجديد المطلوب
+            window.open(`https://wa.me/201080600408?text=${encodeURIComponent(msg)}`);
         }
 
         loadMenu();
