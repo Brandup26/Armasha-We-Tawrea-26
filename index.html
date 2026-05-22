@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>مطبخ نشوي | المنيو الرسمي</title>
+    <title>قرمشة وتوريقة | المنيو الرسمي</title>
     
     <link rel="manifest" href="manifest.json">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="مطبخ نشوي">
-    <link class="brand-logo-img" rel="apple-touch-icon" href="images/loogoo.jpg">
+    <meta name="apple-mobile-web-app-title" content="قرمشة وتوريقة">
+    <link class="brand-logo-img" rel="apple-touch-icon" href="images/loggo.jpg">
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +18,7 @@
           --bg: #e0e0e5; 
           --main-text: #1c1c1e;
           --desc-text: #636366;
-          --accent: #d35400;
+          --accent: #ff7a00; /* درجة البرتقالي المطابقة لهوية اللوجو الجديد */
           --address-tag: #0a84ff;
           --white: #f2f2f7; 
           --glass: rgba(242, 242, 247, 0.95);
@@ -40,7 +40,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; transition: background 0.3s, color 0.3s; }
         body { background-color: var(--bg); color: var(--main-text); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- شاشة الترحيب بحركة الشيف 👌 --- */
+        /* --- شاشة الترحيب بأنيميشن سينمائي جديد ومرن 🌀 --- */
         #splash-screen {
           position: fixed; top: 0; left: 0; width: 100%; height: 100%;
           background: var(--white); z-index: 9999;
@@ -48,30 +48,39 @@
           transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
         }
         .loader-content { text-align: center; position: relative; }
-        .logo-wrapper { position: relative; width: 150px; height: 150px; margin: 0 auto 20px auto; }
+        .logo-wrapper { position: relative; width: 155px; height: 155px; margin: 0 auto 25px auto; }
+        
+        /* الأنيميشن الجديد: دوران ناعم مع تكبير تدريجي وظهور فخم */
         .loader-logo-big {
           width: 100%; height: 100%; border-radius: 50%;
-          object-fit: cover; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-          opacity: 0; filter: blur(8px); transform: scale(0.8);
-          animation: cinematicLogo 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.1s;
+          object-fit: cover; box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+          opacity: 0; filter: blur(10px); transform: scale(0.6) rotate(-45deg);
+          animation: luxuryDynamicLogo 1.6s cubic-bezier(0.25, 1.1, 0.5, 1) forwards 0.1s;
         }
         .chef-hand-sign {
           position: absolute; bottom: 5px; left: 5px; font-size: 2.2rem;
-          opacity: 0; transform: scale(0) rotate(20deg);
-          animation: chefSign 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1.3s;
+          opacity: 0; transform: scale(0) rotate(30deg);
+          animation: chefSign 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1.4s;
           filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
         }
         .loader-text, .loader-slogan, .loading-bar { opacity: 0; transform: translateY(20px); }
         .loader-text { 
-          font-weight: 800; color: var(--accent); font-size: 1.85rem; margin-bottom: 4px; 
-          letter-spacing: -0.5px; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.7s;
+          font-weight: 800; color: var(--accent); font-size: 2rem; margin-bottom: 4px; 
+          letter-spacing: -0.5px; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.8s;
         }
-        .loader-slogan { font-size: 1.05rem; color: var(--desc-text); font-weight: 700; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.9s; }
-        .loading-bar { width: 140px; height: 3.5px; background: rgba(0,0,0,0.05); margin: 25px auto 0 auto; border-radius: 10px; overflow: hidden; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.1s; }
-        .loading-bar span { display: block; width: 0; height: 100%; background: var(--accent); animation: progress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.1s; }
+        .loader-slogan { font-size: 1.05rem; color: var(--desc-text); font-weight: 700; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s; }
+        .loading-bar { width: 140px; height: 3.5px; background: rgba(0,0,0,0.05); margin: 25px auto 0 auto; border-radius: 10px; overflow: hidden; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s; }
+        .loading-bar span { display: block; width: 0; height: 100%; background: var(--accent); animation: progress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
         
-        @keyframes cinematicLogo { to { opacity: 1; filter: blur(0); transform: scale(1); box-shadow: 0 25px 50px rgba(211, 84, 0, 0.18); } }
-        @keyframes chefSign { 0% { opacity: 0; transform: scale(0) rotate(20deg); } 40% { opacity: 1; transform: scale(1.2) rotate(-10deg); } 60% { transform: scale(0.95) rotate(5deg); } 80% { transform: scale(1.1) rotate(0deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
+        @keyframes luxuryDynamicLogo { 
+          to { 
+            opacity: 1; 
+            filter: blur(0); 
+            transform: scale(1) rotate(0deg); 
+            box-shadow: 0 25px 50px rgba(255, 122, 0, 0.15); 
+          } 
+        }
+        @keyframes chefSign { 0% { opacity: 0; transform: scale(0) rotate(30deg); } 40% { opacity: 1; transform: scale(1.2) rotate(-10deg); } 60% { transform: scale(0.95) rotate(5deg); } 80% { transform: scale(1.1) rotate(0deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
         @keyframes cinematicText { to { opacity: 1; transform: translateY(0); } }
         @keyframes progress { to { width: 100%; } }
         .splash-hidden { transform: translateY(-100%); pointer-events: none; }
@@ -152,7 +161,7 @@
         .food-price { font-weight: 800; color: var(--accent); font-size: 0.95rem; }
         .add-btn { background: var(--accent); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; }
         
-        .added-notice { position: absolute; left: 45px; background: rgba(211, 84, 0, 0.12); color: var(--accent); font-size: 0.72rem; font-weight: 800; padding: 5px 12px; border-radius: 12px; opacity: 0; transform: translateY(8px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; }
+        .added-notice { position: absolute; left: 45px; background: rgba(255, 122, 0, 0.12); color: var(--accent); font-size: 0.72rem; font-weight: 800; padding: 5px 12px; border-radius: 12px; opacity: 0; transform: translateY(8px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; }
         .added-notice.show { opacity: 1; transform: translateY(0); }
 
         /* نافذة التأكيد */
@@ -197,9 +206,9 @@
 
     <div id="customConfirm" class="confirm-overlay">
         <div class="confirm-box">
-            <span class="confirm-icon">🧑‍🍳</span>
+            <span class="confirm-icon">🥐</span>
             <h3 class="confirm-title">تنبيه تجهيز الطلب</h3>
-            <p class="confirm-msg">هذا الصنف أكل بيتي ومطبخ نشوي يجهزه طازجاً لك، لذا يستغرق تحضيره 24 ساعة ليكون جاهزاً. هل أنت موافق على ذلك؟</p>
+            <p class="confirm-msg">هذا الصنف يتم تحضيره طازجاً وخاصاً لك في مطبخنا، لذا يستغرق تجهيزه 24 ساعة ليكون بأعلى جودة. هل أنت موافق؟</p>
             <div class="confirm-buttons">
                 <button class="confirm-btn btn-yes" id="confirmYesBtn">نعم، موافق</button>
                 <button class="confirm-btn btn-no" id="confirmNoBtn">إلغاء</button>
@@ -210,11 +219,11 @@
     <div id="splash-screen">
         <div class="loader-content">
             <div class="logo-wrapper">
-                <img src="./images/loogoo.jpg" class="loader-logo-big">
+                <img src="./images/loggo.jpg" class="loader-logo-big">
                 <span class="chef-hand-sign">👌</span>
             </div>
-            <h2 class="loader-text">مطبخ نشوي</h2>
-            <p class="loader-slogan">الأكل البيتي علي أصوله 🍳✨</p>
+            <h2 class="loader-text">قرمشة وتوريقة</h2>
+            <p class="loader-slogan">الأكل على أصوله 🥐✨</p>
             <div class="loading-bar"><span></span></div>
         </div>
     </div>
@@ -224,7 +233,7 @@
             <div class="header-top">
                 <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
                 <div class="header-logo-container">
-                    <img src="./images/loogoo.jpg" class="header-logo">
+                    <img src="./images/loggo.jpg" class="header-logo">
                 </div>
                 <div class="cart-trigger-container">
                     <div class="cart-trigger" onclick="toggleCart(true)" id="cartBtn">
@@ -248,7 +257,7 @@
             <span style="font-weight: 800; font-size: 0.95rem;">📞 رقم استقبال الطلبات:</span>
             <a href="tel:01032654884">01032654884</a>
         </div>
-        <p class="footer-rights">جميع الحقوق محفوظة لـ مطبخ نشوي 2026 ©</p>
+        <p class="footer-rights">جميع الحقوق محفوظة لـ قرمشة وتوريقة 2026 ©</p>
         <div class="dev-credit">
             Designed by eng / Anas Gaber shehata
             <a href="tel:01003800314">📞 01003800314</a>
@@ -259,7 +268,7 @@
         <div class="modal-content">
             <h2 style="margin-bottom: 20px;">طلباتك</h2>
             <div id="cartItemsList"></div>
-            <div style="margin: 20px 0; padding: 15px; background: rgba(211, 84, 0, 0.1); border-radius: 18px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="margin: 20px 0; padding: 15px; background: rgba(255, 122, 0, 0.1); border-radius: 18px; display: flex; justify-content: space-between; align-items: center;">
                 <b>المجموع النهائي</b>
                 <div style="text-align: left;">
                     <b id="totalAmount" style="color: var(--accent); font-size: 1.1rem;">0 ج.م</b>
@@ -276,7 +285,6 @@
     </div>
 
     <script>
-        // تم تحديث الرابط بنجاح إلى شيت جوجل الجديد الخاص بك
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLNqSU18aiPgmle9buLnKuMA5JzoqVx6Ghs6Vkxhln3OZI_zLP4Qx7q4ZUbS2OC7b9Wvk02qXyuWx4/pub?output=csv';
         const IMAGES_PATH = "./images/"; 
         let menuData = [], cart = [];
@@ -320,7 +328,6 @@
                     let itemPrice = col[2]?.replace(/^["']|["']$/g, '').trim();
                     
                     if(itemName) {
-                        // تعديل مصفوفة البيانات لقراءة وحفظ (القسم، الاسم، السعر) فقط بناءً على الشيت المحدث
                         menuData.push({ category: categoryName, name: itemName, price: itemPrice, img: `${IMAGES_PATH}${itemName}.jpg` });
                     }
                 }
@@ -349,7 +356,6 @@
                 el.classList.add('active');
                 el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
-            // إزالة تاج الـ p الخاص بالوصف (food-desc) لتبسيط العرض وجعله أكثر تنظيماً وجمالاً
             document.getElementById('menuList').innerHTML = menuData.filter(i => i.category === cat).map(item => `
                 <div class="food-card">
                     <div class="item-img-box"><img src="${item.img}" onerror="this.src='${IMAGES_PATH}default.jpg'"></div>
@@ -386,7 +392,7 @@
             setTimeout(() => notice.classList.remove('show'), 2000);
 
             const fly = document.createElement('div');
-            fly.className = 'fly-item'; fly.innerHTML = '🍳';
+            fly.className = 'fly-item'; fly.innerHTML = '🥐';
             fly.style.left = e.clientX + 'px'; fly.style.top = e.clientY + 'px';
             document.body.appendChild(fly);
 
@@ -437,11 +443,12 @@
             if (modal.style.display === 'flex') { modal.style.display = 'none'; }
         });
 
+        // رسالة الواتساب المحدثة باسم قرمشة وتوريقة
         function sendToWA() {
             const n = document.getElementById('uName').value, p = document.getElementById('uPhone').value, a = document.getElementById('uAddr').value;
             if(!n || !p || !a || cart.length === 0) return alert("يرجى إكمال البيانات واختيار الأصناف");
             
-            let msg = `طلب جديد - مطبخ نشوي\n\n👤 الاسم: ${n}\n📱 الموبايل: ${p}\n📍 العنوان: ${a}\n\nالطلبات:\n` 
+            let msg = `طلب جديد - قرمشة وتوريقة\n\n👤 الاسم: ${n}\n📱 الموبايل: ${p}\n📍 العنوان: ${a}\n\nالطلبات:\n` 
                       + cart.map(i => `- ${i.name} (${i.price} ج.م)`).join('\n')
                       + `\n\n💰 الإجمالي: ${currentTotal} ج.م + رسوم التوصيل\n⚠️ تأكيد: وافق العميل رسمياً في الموقع على أن التجهيز يستغرق 24 ساعة.`;
                       
