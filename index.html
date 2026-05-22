@@ -16,11 +16,11 @@
     <style>
         :root {
           --bg: #f4f5f7; 
-          --main-text: #0b3168; /* الأزرق الكحلي العميق */
+          --main-text: #0b3168; 
           --desc-text: #536785;
-          --accent: #ff6a00; /* زيادة درجة البرتقالي الحيوية */
+          --accent: #ff6a00; 
           --address-tag: #ff6a00;
-          --white: #faf9f6; /* تحويل الأبيض إلى أوف وايت فخم */
+          --white: #faf9f6; 
           --glass: rgba(250, 249, 246, 0.95);
           --success: #34c759;
           --header-bg: #faf9f6;
@@ -71,20 +71,13 @@
         .loading-bar { width: 140px; height: 3.5px; background: rgba(11, 49, 104, 0.08); margin: 25px auto 0 auto; border-radius: 10px; overflow: hidden; animation: cinematicText 1s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s; }
         .loading-bar span { display: block; width: 0; height: 100%; background: var(--accent); animation: progress 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s; }
         
-        @keyframes luxuryDynamicLogo { 
-          to { 
-            opacity: 1; 
-            filter: blur(0); 
-            transform: scale(1) rotate(0deg); 
-            box-shadow: 0 25px 50px rgba(255, 106, 0, 0.2); 
-          } 
-        }
+        @keyframes luxuryDynamicLogo { to { opacity: 1; filter: blur(0); transform: scale(1) rotate(0deg); box-shadow: 0 25px 50px rgba(255, 106, 0, 0.2); } }
         @keyframes chefSign { 0% { opacity: 0; transform: scale(0) rotate(30deg); } 40% { opacity: 1; transform: scale(1.2) rotate(-10deg); } 60% { transform: scale(0.95) rotate(5deg); } 80% { transform: scale(1.1) rotate(0deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
         @keyframes cinematicText { to { opacity: 1; transform: translateY(0); } }
         @keyframes progress { to { width: 100%; } }
         .splash-hidden { transform: translateY(-100%); pointer-events: none; }
 
-        /* --- حاوية علوية ثابتة ومحمية بالكامل --- */
+        /* --- الحاوية العلوية --- */
         .sticky-wrapper {
           position: -webkit-sticky;
           position: sticky;
@@ -95,12 +88,7 @@
           padding-top: calc(12px + env(safe-area-inset-top, 0px));
         }
 
-        header { 
-          display: flex; 
-          flex-direction: column; 
-          align-items: center; 
-          padding: 4px 0 6px 0; 
-        }
+        header { display: flex; flex-direction: column; align-items: center; padding: 4px 0 6px 0; }
         .header-top { width: 100%; display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 6px; }
         
         .header-logo-container { width: 95px; height: 95px; border-radius: 50%; background: var(--white); padding: 3px; box-shadow: 0 3px 12px rgba(11, 49, 104, 0.15); overflow: hidden; }
@@ -114,34 +102,11 @@
         .badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 10px; font-weight: 800; width: 19px; height: 19px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; transform: scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .badge.show { transform: scale(1); }
         
-        .header-bottom-addr { 
-          text-align: center; 
-          width: 100%; 
-          padding: 6px 16px; 
-          border-top: 0.5px solid rgba(11, 49, 104, 0.06); 
-          display: flex; 
-          flex-direction: row; 
-          align-items: center; 
-          justify-content: center; 
-          gap: 4px; 
-          flex-wrap: wrap;
-        }
+        .header-bottom-addr { text-align: center; width: 100%; padding: 6px 16px; border-top: 0.5px solid rgba(11, 49, 104, 0.06); display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
         .addr-tag { color: var(--accent); font-weight: 800; font-size: 0.85rem; white-space: nowrap; }
         .brand-addr { font-size: 0.85rem; color: var(--main-text); font-weight: 700; line-height: 1.3; text-align: center; }
 
-        /* الأقسام - الصور محتفظ بها كما هي ومحمية */
-        .category-nav { 
-          display: flex; 
-          overflow-x: auto; 
-          white-space: nowrap; 
-          padding: 10px 16px 12px 16px; 
-          gap: 22px; 
-          scrollbar-width: none; 
-          background: var(--glass); 
-          backdrop-filter: blur(20px); 
-          border-bottom: 0.5px solid rgba(11, 49, 104, 0.1); 
-          -webkit-overflow-scrolling: touch; 
-        }
+        .category-nav { display: flex; overflow-x: auto; white-space: nowrap; padding: 10px 16px 12px 16px; gap: 22px; scrollbar-width: none; background: var(--glass); backdrop-filter: blur(20px); border-bottom: 0.5px solid rgba(11, 49, 104, 0.1); -webkit-overflow-scrolling: touch; }
         .category-nav::-webkit-scrollbar { display: none; }
         
         .cat-item { display: flex; flex-direction: column; align-items: center; min-width: 80px; cursor: pointer; flex-shrink: 0; }
@@ -152,7 +117,6 @@
         .cat-item.active span { color: var(--main-text); font-weight: 800; }
 
         .menu-list { padding: 12px; max-width: 600px; margin: 10px auto auto auto; }
-        /* كروت الأصناف - تم التعديل لتكون بدون أيقونات صور الأصناف بناءً على رغبتك */
         .food-card { background: var(--white); border-radius: 18px; margin-bottom: 10px; display: flex; padding: 16px; gap: 12px; align-items: center; box-shadow: 0 4px 15px rgba(11, 49, 104, 0.03); }
         .food-info { flex: 1; position: relative; display: flex; flex-direction: column; justify-content: center; }
         .food-name { font-weight: 700; font-size: 1.05rem; color: var(--main-text); margin-bottom: 6px; }
@@ -160,33 +124,25 @@
         .food-price { font-weight: 800; color: var(--accent); font-size: 1rem; }
         .add-btn { background: var(--accent); color: white; border: none; width: 38px; height: 38px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2); }
         
-        /* تأثير تم الطلب البسيط والواضح بالبرتقالي المكثف */
-        .added-notice { 
-          position: absolute; 
-          left: 48px; 
-          background: var(--accent); 
-          color: #ffffff; 
-          font-size: 0.75rem; 
-          font-weight: 800; 
-          padding: 6px 14px; 
-          border-radius: 20px; 
-          opacity: 0; 
-          transform: translateY(8px); 
-          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-          pointer-events: none;
-          box-shadow: 0 4px 12px rgba(255, 106, 0, 0.35);
-        }
-        .added-notice.show { 
-          opacity: 1; 
-          transform: translateY(0);
-          animation: pulseNotice 0.4s ease-in-out alternate 2;
-        }
-        @keyframes pulseNotice {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.08); }
-        }
+        .added-notice { position: absolute; left: 48px; background: var(--accent); color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 6px 14px; border-radius: 20px; opacity: 0; transform: translateY(8px); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; box-shadow: 0 4px 12px rgba(255, 106, 0, 0.35); }
+        .added-notice.show { opacity: 1; transform: translateY(0); animation: pulseNotice 0.4s ease-in-out alternate 2; }
+        @keyframes pulseNotice { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
 
         .fly-item { position: fixed; z-index: 9999; pointer-events: none; width: 30px; height: 30px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+
+        /* --- لوحة إرشاد آيفون وبوب أب التثبيت (iOS Prompt) --- */
+        #ios-prompt {
+          position: fixed; bottom: 20px; left: 20px; right: 20px;
+          background: var(--white); border: 2px solid var(--accent);
+          border-radius: 20px; padding: 15px 20px; z-index: 99999;
+          display: none; align-items: center; gap: 15px;
+          box-shadow: 0 10px 30px rgba(11, 49, 104, 0.2);
+          animation: slideUpPrompt 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes slideUpPrompt { from { transform: translateY(150px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .ios-prompt-text { flex: 1; font-size: 0.88rem; font-weight: 700; color: var(--main-text); }
+        .ios-prompt-icon { width: 45px; height: 45px; border-radius: 12px; object-fit: cover; }
+        .ios-close-btn { background: none; border: none; color: #ff3b30; font-weight: 800; font-size: 1.1rem; cursor: pointer; padding: 0 5px; }
 
         /* --- Footer --- */
         .restaurant-footer { padding: 30px 20px; text-align: center; background: var(--white); border-top: 1px solid rgba(11, 49, 104, 0.05); margin-top: 20px; }
@@ -221,6 +177,14 @@
             <p class="loader-slogan">لَمَّا الطَّعْم يِبْقَى حِكَايَة...</p>
             <div class="loading-bar"><span></span></div>
         </div>
+    </div>
+
+    <div id="ios-prompt">
+        <img src="images/loggo.jpg" class="ios-prompt-icon">
+        <div class="ios-prompt-text">
+            ثبت تطبيق "قرمشة وتوريقة" على الآيفون: اضغط على زر المشاركة <span style="font-size:1.1rem; color:var(--accent);">⎋</span> ثم اختر <b>"إضافة إلى الشاشة الرئيسية"</b>.
+        </div>
+        <button class="ios-close-btn" onclick="closeIosPrompt()">✕</button>
     </div>
 
     <div class="sticky-wrapper">
@@ -304,6 +268,18 @@
             r.push(p); return r;
         }
 
+        /* فحص وإظهار تلميح التثبيت لأجهزة الآيفون */
+        function checkIosPrompt() {
+            const isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+            const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator.standalone);
+            if (isIos && !isInStandaloneMode) {
+                setTimeout(() => {
+                    document.getElementById('ios-prompt').style.display = 'flex';
+                }, 4500); // يظهر بعد إغلاق شاشة الترحيب بـ 1.3 ثانية
+            }
+        }
+        function closeIosPrompt() { document.getElementById('ios-prompt').style.style.display = 'none'; }
+
         async function loadMenu() {
             try {
                 const response = await fetch(csvUrl);
@@ -324,6 +300,7 @@
                 preloadImages(menuData); renderNav();
                 setTimeout(() => {
                     document.getElementById('splash-screen').classList.add('splash-hidden');
+                    checkIosPrompt();
                     if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(err => console.log(err)); }
                 }, 3200);
             } catch (e) { document.getElementById('splash-screen').classList.add('splash-hidden'); }
@@ -346,7 +323,6 @@
                 el.classList.add('active');
                 el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
-            // المنيو بدون صندوق أيقونة صورة الصنف تلبيةً لطلبك
             document.getElementById('menuList').innerHTML = menuData.filter(i => i.category === cat).map(item => `
                 <div class="food-card">
                     <div class="food-info">
@@ -425,12 +401,10 @@
             const n = document.getElementById('uName').value, p = document.getElementById('uPhone').value, a = document.getElementById('uAddr').value;
             if(!n || !p || !a || cart.length === 0) return alert("يرجى إكمال البيانات واختيار الأصناف");
             
-            // تم مسح جملة التوصيل بالكامل من محتوى الرسالة النهائية الموجهة للواتساب
             let msg = `طلب جديد - قرمشة وتوريقة\n\n👤 الاسم: ${n}\n📱 الموبايل: ${p}\n📍 العنوان: ${a}\n\nالطلبات:\n` 
                       + cart.map(i => `- ${i.name} (${i.price} ج.م)`).join('\n')
                       + `\n\n💰 الإجمالي: ${currentTotal} ج.م`;
             
-            // التوجيه المباشر للرقم الجديد المطلوب
             window.open(`https://wa.me/201080600408?text=${encodeURIComponent(msg)}`);
         }
 
