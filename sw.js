@@ -1,3 +1,5 @@
+// غير السطر الأول فقط في ملف sw.js إلى v2
+const CACHE_NAME = 'polo-frita-v2'; 
 const CACHE_NAME = 'qarmasha-v1';
 const ASSETS = [
   'index.html',
