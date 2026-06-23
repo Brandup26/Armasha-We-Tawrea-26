@@ -1,0 +1,25 @@
+{
+  "nav_colors": true,
+  "name": "قرمشة وتوريقة",
+  "short_name": "قرمشة وتوريقة",
+  "description": "المنيو الرسمي لمطعم قرمشة وتوريقة",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#ff6a00",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/loggo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/loggo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
